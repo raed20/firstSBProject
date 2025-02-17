@@ -20,4 +20,8 @@ public class Bloc {
     private String nomBloc;
     private Long capaciteBloc;
 
+    @ManyToOne
+    @JoinColumn(name = "idFoyer")
+    private Foyer foyer;
+
 }

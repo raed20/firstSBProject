@@ -24,4 +24,7 @@ public class Etudiant {
     private String ecole;
     private Date dateNaissance;
 
+    @OneToMany(mappedBy = "etudiant", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Reservation> reservations;
+
 }

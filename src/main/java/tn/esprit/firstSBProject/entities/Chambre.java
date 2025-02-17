@@ -22,6 +22,11 @@ public class Chambre {
 
     @Enumerated(EnumType.STRING)
     private TypeC typeC;
+    @ManyToOne
+    @JoinColumn(name = "idBloc")
+    private Bloc bloc;
 
+    @OneToMany(mappedBy = "chambre", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Reservation> reservations;
 
 }

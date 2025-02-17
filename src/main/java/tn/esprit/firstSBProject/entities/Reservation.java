@@ -20,6 +20,14 @@ public class Reservation {
     @Id
     private int idReservation;
 
-    private Date anneelUniversitaire;
+    private Date anneeUniversitaire;
     private boolean estValide;
+
+    @ManyToOne
+    @JoinColumn(name = "idChambre")
+    private Chambre chambre;
+
+    @ManyToOne
+    @JoinColumn(name = "idEtudiant")
+    private Etudiant etudiant;
 }

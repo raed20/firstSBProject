@@ -20,4 +20,7 @@ public class Universite {
     private String nomUniversite;
     private String adresse;
 
+    @OneToMany(mappedBy = "universite", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Foyer> foyers;
+
 }

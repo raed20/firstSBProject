@@ -21,5 +21,10 @@ public class Foyer {
     private String nomFoyer;
     private Long capaciteFoyer;
 
+    @ManyToOne
+    @JoinColumn(name = "idUniversite")
+    private Universite universite;
 
+    @OneToMany(mappedBy = "foyer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Bloc> blocs;
 }
