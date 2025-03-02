@@ -30,4 +30,8 @@ public class Reservation {
     @ManyToOne
     @JoinColumn(name = "idEtudiant")
     private Etudiant etudiant;
+    public long  getIdReservation() {
+        return idReservation;
+
+    }
 }

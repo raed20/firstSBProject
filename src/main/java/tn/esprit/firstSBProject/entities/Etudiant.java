@@ -26,5 +26,9 @@ public class Etudiant {
 
     @OneToMany(mappedBy = "etudiant", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Reservation> reservations;
+    public long getIdEtudiant() {
+        return idEtudiant;
+    }
+
 
 }

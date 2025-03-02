@@ -22,5 +22,9 @@ public class Universite {
 
     @OneToMany(mappedBy = "universite", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Foyer> foyers;
+    public long  getIdUniversite() {
+        return idUniversite;
+
+    }
 
 }

@@ -7,26 +7,29 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.List;
 
+@Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class Chambre {
+@AllArgsConstructor
+public class Chambre  implements Serializable {
     @Id
-    private long idChambre;
-
-    private long numeroChambre;
-
-    @Enumerated(EnumType.STRING)
-    private TypeC typeC;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idChambre;
+    private Long numeroChambre;
+    private TypeC typeChambre;
     @ManyToOne
-    @JoinColumn(name = "idBloc")
     private Bloc bloc;
-
-    @OneToMany(mappedBy = "chambre", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany
     private List<Reservation> reservations;
+
+    public long getIdChambre() {
+        return idChambre;
+    }
+
+
 
 }

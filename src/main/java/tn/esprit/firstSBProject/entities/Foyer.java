@@ -27,4 +27,8 @@ public class Foyer {
 
     @OneToMany(mappedBy = "foyer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Bloc> blocs;
+    public long getIdFoyer() {
+        return idFoyer;
+
+    }
 }
