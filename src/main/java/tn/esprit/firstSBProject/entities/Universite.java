@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Optional;
 
 @Getter
 @Setter
@@ -20,11 +21,13 @@ public class Universite {
     private String nomUniversite;
     private String adresse;
 
-    @OneToMany(mappedBy = "universite", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Foyer> foyers;
+    @OneToOne
+    private Foyer foyer;
     public long  getIdUniversite() {
         return idUniversite;
-
+    }
+    public void setFoyer(Foyer foyer) {
+        this.foyer = foyer;
     }
 
 }
